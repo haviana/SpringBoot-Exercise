@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.multicert.app.MulticertExerciseApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.766 s - in com.multicert.app.MulticertExerciseApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.094 s - in com.multicert.app.MulticertExerciseApplicationTests
