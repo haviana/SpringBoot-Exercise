@@ -3,8 +3,10 @@ package com.multicert.app.controller;
 import com.multicert.app.Entity.Car;
 import com.multicert.app.Repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @CrossOrigin
@@ -32,10 +34,19 @@ public class carController {
     public String home(){
         return "Hello World!";
     }
-    @PostMapping("/")
-    public String processForm(CarRepository car) {
 
-        return "showMessage";
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Car> deleteCar(@PathVariable(value = "id") Integer id) {
+        Car car = carRepository.findById(id).get();
+
+        carRepository.delete(car);
+
+        return ResponseEntity.ok().build();
     }
 
+
+    @PostMapping("/add")
+    public Car createCar(@Valid @RequestBody Car car) {
+        return carRepository.save(car);
+    }
 }

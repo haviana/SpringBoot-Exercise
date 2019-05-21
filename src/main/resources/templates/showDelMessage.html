@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Deleted car</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Result</h1>
+
+<p th:text="'Id: ' + ${car.id}"></p>
+<p th:text="'Modelo: ' + ${car.modelo}"></p>
+<p th:text="'Marca: ' + ${car.marca}"></p>
+<p th:text="'Matricula: ' + ${car.matricula}"></p>
+<p th:text="'Consumos: ' + ${car.consumos}"></p>
+
+<a href="/delCar">Do you want to delete more cars?</a>
+
+</body>
+</html>

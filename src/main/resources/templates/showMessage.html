@@ -8,9 +8,13 @@
 
 <h1>Result</h1>
 
+<p th:text="'Id: ' + ${car.id}"></p>
 <p th:text="'Modelo: ' + ${car.modelo}"></p>
 <p th:text="'Marca: ' + ${car.marca}"></p>
-<a href="/addUser">Submit another message</a>
+<p th:text="'Matricula: ' + ${car.matricula}"></p>
+<p th:text="'Consumos: ' + ${car.consumos}"></p>
+
+<a href="/addCar">Submit another message</a>
 
 </body>
 </html>

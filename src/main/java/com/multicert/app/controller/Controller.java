@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Optional;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -33,16 +34,31 @@ public class Controller {
         return "index";
     }
 
-    @GetMapping("/addUser")
+    @GetMapping("/addCar")
     public String sendForm(Car car) {
 
-        return "addUser";
+        return "addCar";
     }
 
-    @PostMapping("/addUser")
+    @PostMapping("/addCar")
     public String processForm(Car car) {
         carRepository.save(car);
         return "showMessage";
     }
+
+    @GetMapping("/delCar")
+    public String sendDelForm(Car car) {
+
+        return "delCar";
+    }
+
+    @PostMapping("/delCar/{id}")
+    public String processDelForm(@PathVariable Integer id) {
+       Car car = carRepository.findById(id).get();
+        carRepository.delete(car);
+        return "showDelMessage";
+    }
+
+
 
 }

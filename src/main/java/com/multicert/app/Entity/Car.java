@@ -7,6 +7,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Car {
+
+    public Car() {
+    }
+
     public Car(String matricula, String marca, String modelo, Integer consumos) {
         this.matricula = matricula;
         this.marca = marca;
@@ -46,8 +50,15 @@ public class Car {
         this.consumos = consumos;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Integer id;
 
     private String matricula;
