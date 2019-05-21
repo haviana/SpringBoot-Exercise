@@ -26,13 +26,6 @@ public class Controller {
         return "index";
     }
 
-    @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String submit(@ModelAttribute("car") Car car, Model model) {
-        Car car1 = new Car("01-02-FD","Ford","Ka",1);
-        carRepository.save(car1);
-        model.addAttribute("cars",carRepository.findAll());
-        return "index";
-    }
 
     @GetMapping("/addCar")
     public String sendForm(Car car) {
